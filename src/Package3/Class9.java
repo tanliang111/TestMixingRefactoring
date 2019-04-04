@@ -1,4 +1,4 @@
-package Package1;
+package Package3;
 
 public class Class9 {
 	import org.apache.sshd.common.keyprovider.AbstractKeyPairProvider;
@@ -41,10 +41,10 @@ public class Class9 {
 	        	  keys.add(convertPemKeyPair(keyPair));
 	          } else if (o instanceof SubjectPublicKeyInfo) {
 	            PEMKeyPair keyPair = new PEMKeyPair((SubjectPublicKeyInfo) o, null);
-	            keys.add(convertPemKeyPair(keyPair));
-	          } else {
-	            throw new UnsupportedOperationException(String.format("Key type %s not supported.", o.getClass().getName()));
+	            JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+	            keys.add(new KeyPair(converter.getPublicKey(keyPair.getPublicKeyInfo()), null));
 	            
+	          	          
 	          }
 	      }
 	      catch (Exception e) {
@@ -53,9 +53,6 @@ public class Class9 {
 	    }
 	    return keys;
 	  }
-	  private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
-		    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-		    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
-		  }
+	  
 	}
 }
