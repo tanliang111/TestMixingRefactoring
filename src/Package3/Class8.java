@@ -1,6 +1,6 @@
 package Package3;
 
-public class Class8 {
+public class Class8 extends Class10 {
 
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
 	  /** . */
@@ -22,9 +22,12 @@ public class Class8 {
 	            keys.add(new KeyPair((PublicKey)o, null));
 	          } else if (o instanceof PEMKeyPair) {
 	            PEMKeyPair keyPair = (PEMKeyPair)o;
-	            JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-	            keys.add(new KeyPair(converter.getPublicKey(keyPair.getPublicKeyInfo()), null));
-	           
+	            keys.add(convertPemKeyPair(keyPair));
+	          } else if (o instanceof SubjectPublicKeyInfo) {
+	            PEMKeyPair keyPair = new PEMKeyPair((SubjectPublicKeyInfo) o, null);
+	            keys.add(convertPemKeyPair(keyPair));
+	          } else {
+	            throw new UnsupportedOperationException(String.format("Key type %s not supported.", o.getClass().getName()));
 	          }
 	      }
 	      catch (Exception e) {
@@ -33,8 +36,6 @@ public class Class8 {
 	    }
 	    return keys;
 	  }
-
-	  
 
 	}
 	
