@@ -1,6 +1,7 @@
-package Package2;
+package Package22;
 
-public class Class5 {
+public class Class6 {
+
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
 	  /** . */
 	  private String[] files;
@@ -37,8 +38,11 @@ public class Class5 {
 	    return keys;
 	  }
 
-	
-	  
+	 
+	  private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+		    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+		    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+		  }
 
 	
 }
