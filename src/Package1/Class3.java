@@ -22,8 +22,6 @@ public class Class3 extends Class2 {
 	            keys.add(new KeyPair((PublicKey)o, null));
 	          } else if (o instanceof PEMKeyPair) {
 	            PEMKeyPair keyPair = (PEMKeyPair)o;
-	            JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-	            keys.add(new KeyPair(converter.getPublicKey(keyPair.getPublicKeyInfo()), null));
 	            
 	          }
 	      }
