@@ -1,9 +1,9 @@
 package Package3;
 
-import Package22.JcaPEMKeyConverter;
-import Package22.KeyPair;
-import Package22.PEMException;
-import Package22.PEMKeyPair;
+import Package2.JcaPEMKeyConverter;
+import Package2.KeyPair;
+import Package2.PEMException;
+import Package2.PEMKeyPair;
 
 public class Class7 {
 	public abc() {

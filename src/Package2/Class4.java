@@ -1,4 +1,4 @@
-package Package22;
+package Package2;
 
 import Package1.AbstractKeyPairProvider;
 import Package1.ArrayList;
