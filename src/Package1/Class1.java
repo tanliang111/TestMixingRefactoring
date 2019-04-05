@@ -8,15 +8,22 @@ public class Class1 {
 		    List<KeyPair> keys = new ArrayList<KeyPair>();
 		    for (String file : files) {
 		      try {
-		          Object o = KeyPairUtils.readKey(new InputStreamReader(new FileInputStream(file)));
+		         
+		    	  boolean shouldShowTagToolbar = (getPostListType() == ReaderPostListType.TAG_FOLLOWED);
+		    	  
+		    	  Object o = KeyPairUtils.readKey(new InputStreamReader(new FileInputStream(file)));
 		          if (o instanceof KeyPair) {
 		            keys.add(new KeyPair(((KeyPair)o).getPublic(), null));
 		          } else if (o instanceof PublicKey) {
 		            keys.add(new KeyPair((PublicKey)o, null));
 		          } else if (o instanceof PEMKeyPair) {
 		            PEMKeyPair keyPair = (PEMKeyPair)o;
-		            JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-		            keys.add(new KeyPair(converter.getPublicKey(keyPair.getPublicKeyInfo()), null));
+		            keys.add(convertPemKeyPair(keyPair));
+		          } else if (o instanceof SubjectPublicKeyInfo) {
+		            PEMKeyPair keyPair = new PEMKeyPair((SubjectPublicKeyInfo) o, null);
+		            keys.add(convertPemKeyPair(keyPair));
+		          } else {
+		            throw new UnsupportedOperationException(String.format("Key type %s not supported.", o.getClass().getName()));
 		           
 		      }
 		      catch (Exception e) {
@@ -26,10 +33,10 @@ public class Class1 {
 		    return keys;
 		  }
 
-		    private boolean shouldShowTagToolbar() {
-		        return (getPostListType() == ReaderPostListType.TAG_FOLLOWED);
-		    }
-
+		    private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+		        JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+		        return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+		      }
 }
 
 	  
