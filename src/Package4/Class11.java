@@ -6,6 +6,12 @@ public cde() {
 		
 	}
 	
+public bcd() {
+	if (paymentInfoPlugin == null) {
+        throw new IllegalStateException("Payment plugin returned a null result");
+    }
+}
+
 
 
 
