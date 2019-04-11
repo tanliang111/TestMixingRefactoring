@@ -1,4 +1,4 @@
-package Package22;
+package Package2;
 
 public class Class5 {
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);

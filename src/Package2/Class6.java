@@ -1,4 +1,4 @@
-package Package22;
+package Package2;
 
 public class Class6 {
 
