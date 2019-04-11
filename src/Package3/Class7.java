@@ -4,6 +4,8 @@ import Package2.JcaPEMKeyConverter;
 import Package2.KeyPair;
 import Package2.PEMException;
 import Package2.PEMKeyPair;
+import Package4.PaymentApiException;
+import Package4.PaymentTransactionInfoPlugin;
 
 public class Class7 {
 	public abc() {
@@ -12,6 +14,10 @@ public class Class7 {
 	    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
 	    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
 	  }
-
+	private void sanityOnPaymentInfoPlugin(final PaymentTransactionInfoPlugin paymentInfoPlugin) throws PaymentApiException {
+	    if (paymentInfoPlugin == null) {
+	        throw new PaymentApiException(ErrorCode.PAYMENT_PLUGIN_EXCEPTION, "Payment plugin returned a null result");
+	    }
+	}
 
 }
