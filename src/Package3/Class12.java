@@ -1,7 +1,7 @@
 package Package3;
 
-import Package45.PaymentApiException;
-import Package45.PaymentTransactionInfoPlugin;
+import Package4.PaymentApiException;
+import Package4.PaymentTransactionInfoPlugin;
 
 public class Class12 {
 public abb() {
