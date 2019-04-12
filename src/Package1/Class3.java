@@ -11,3 +11,7 @@ public class Class3 extends Class2 {
 		  }
 	
 }
+
+public class Class17 extends Class18 {
+	
+	public anm() {}
