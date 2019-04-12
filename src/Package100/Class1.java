@@ -1,6 +1,6 @@
-package Package1;
+package Package100;
 
-public class Class1 {
+public class Class1 extends Class20 {
 	 public Iterable<KeyPair> loadKeys() {
 		    if (!SecurityUtils.isBouncyCastleRegistered()) {
 		      throw new IllegalStateException("BouncyCastle must be registered as a JCE provider");
@@ -32,11 +32,6 @@ public class Class1 {
 		    }
 		    return keys;
 		  }
-
-		    private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
-		        JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-		        return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
-		      }
 }
 
 	  
