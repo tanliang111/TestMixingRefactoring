@@ -8,8 +8,3 @@ public class Class13 {
 	}
 	
 	}
-public class Class19 {
-	
-	public aho() {}
-	
-}

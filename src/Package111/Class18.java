@@ -1,4 +1,4 @@
-package Package1;
+package Package111;
 
 public class Class18 {
 
@@ -12,4 +12,10 @@ public class Class18 {
 		        }
 	}
 
+}
+
+public class Class19 {
+	
+	public aho() {}
+	
 }
