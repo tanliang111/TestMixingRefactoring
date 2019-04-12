@@ -1,6 +1,6 @@
-package Package45;
+package Package4;
 
-public abstract class Class14 {
+public class Class14 {
 public abi() { }
 private void sanityOnPaymentInfoPlugin(final PaymentTransactionInfoPlugin paymentInfoPlugin) throws PaymentApiException {
     if (paymentInfoPlugin == null) {
