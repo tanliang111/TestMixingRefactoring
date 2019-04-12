@@ -11,9 +11,3 @@ public cde() {
 	}
 	
 }
-public class Class17 {
-	
-	public anm() {}
-	
-	
-}
