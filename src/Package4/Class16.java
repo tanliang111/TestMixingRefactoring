@@ -6,6 +6,8 @@ public class Class16 {
 		
 	}
 
-
+    public cla() {
+		
+	}
 
 }
