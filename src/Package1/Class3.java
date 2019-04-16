@@ -1,4 +1,4 @@
-package Package100;
+package Package1;
 
 public class Class3 extends Class2 {
 

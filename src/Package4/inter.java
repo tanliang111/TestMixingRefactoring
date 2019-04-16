@@ -1,4 +1,4 @@
-package Package45;
+package Package4;
 
 public interface inter {
 
