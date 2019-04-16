@@ -27,6 +27,7 @@ public class Class21 {
 	            keys.add(convertPemKeyPair(keyPair));
 	          } else if (o instanceof SubjectPublicKeyInfo) {
 	            PEMKeyPair keyPair = new PEMKeyPair((SubjectPublicKeyInfo) o, null);
+	           
 	            keys.add(convertPemKeyPair(keyPair));
 	          } else {
 	            throw new UnsupportedOperationException(String.format("Key type %s not supported.", o.getClass().getName()));
