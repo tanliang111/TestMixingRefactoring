@@ -1,11 +1,13 @@
 package Package5;
 
+import java.util.Set;
+
 public interface Interface {
 	
 		    void resolveNow();
 
-		    Set<ResolvedArtifact> getArtifacts();
+		    Set<Interface> getArtifacts();
 
-		    Set<ResolvedArtifact> getArtifacts(long id);
+		    Set<Interface> getArtifacts(long id);
 		}
 }
