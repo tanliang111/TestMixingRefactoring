@@ -1,13 +1,7 @@
-package Package11;
+package Package1;
 
-import Package5.JcaPEMKeyConverter;
-import Package5.KeyPair;
-import Package5.PEMException;
-import Package5.PEMKeyPair;
-import Package5.PaymentApiException;
-import Package5.PaymentTransactionInfoPlugin;
 
-public class Class1 extends Class20 {
+public class Class1 {
 	 public Iterable<KeyPair> loadKeys() {
 		    if (!SecurityUtils.isBouncyCastleRegistered()) {
 		      throw new IllegalStateException("BouncyCastle must be registered as a JCE provider");
@@ -39,10 +33,7 @@ public class Class1 extends Class20 {
 		    }
 		    return keys;
 		  }
-		    private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
-			    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-			    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
-			  }     
+		     
 	 }
 	 
 	 
