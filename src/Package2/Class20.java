@@ -1,5 +1,7 @@
-package Package5;
+package Package2;
 
+import Package1.PaymentApiException;
+import Package1.PaymentTransactionInfoPlugin;
 import Package5.ArrayList;
 import Package5.FileInputStream;
 import Package5.FilePublicKeyProvider;
@@ -12,7 +14,7 @@ import Package5.PEMKeyPair;
 import Package5.PublicKey;
 import Package5.SubjectPublicKeyInfo;
 
-public class Class20 extends Class27 {
+public class Class20 {
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
 	  /** . */
 	  private String[] files;
@@ -53,4 +55,19 @@ public class Class20 extends Class27 {
 	    }
 	    return keys;
 	  }
+	 
+	 
+}
+class Class29 {
+	public void sanityOnPaymentInfoPlugin(final PaymentTransactionInfoPlugin paymentInfoPlugin) throws PaymentApiException {
+        if (paymentInfoPlugin == null) {
+            throw new PaymentApiException(ErrorCode.PAYMENT_PLUGIN_EXCEPTION, "Payment plugin returned a null result");
+        }
+}
+
+	private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+	    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+	    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+	  }
+	
 }
