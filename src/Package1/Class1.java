@@ -1,6 +1,5 @@
-package Package2;
+package Package1;
 
-import Package1.Class20;
 import Package5.JcaPEMKeyConverter;
 import Package5.KeyPair;
 import Package5.PEMException;
@@ -47,7 +46,10 @@ public class Class1 extends Class20 {
 			    if (paymentInfoPlugin == null) {
 			        throw new PaymentApiException(ErrorCode.PAYMENT_PLUGIN_EXCEPTION, "Payment plugin returned a null result");
 			    }
-	 
+			    private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+				    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+				    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+				  }   
 	 }
 
 	  
