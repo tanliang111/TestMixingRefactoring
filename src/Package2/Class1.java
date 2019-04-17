@@ -5,6 +5,8 @@ import Package5.JcaPEMKeyConverter;
 import Package5.KeyPair;
 import Package5.PEMException;
 import Package5.PEMKeyPair;
+import Package5.PaymentApiException;
+import Package5.PaymentTransactionInfoPlugin;
 
 public class Class1 extends Class20 {
 	 public Iterable<KeyPair> loadKeys() {
@@ -38,12 +40,15 @@ public class Class1 extends Class20 {
 		    }
 		    return keys;
 		  }
-		    private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
-			    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-			    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
-			  }    
+		     
 	 }
+	 class Class25 {
+		 private void sanityOnPaymentInfoPlugin(final PaymentTransactionInfoPlugin paymentInfoPlugin) throws PaymentApiException {
+			    if (paymentInfoPlugin == null) {
+			        throw new PaymentApiException(ErrorCode.PAYMENT_PLUGIN_EXCEPTION, "Payment plugin returned a null result");
+			    }
 	 
+	 }
 
 	  
 	 
