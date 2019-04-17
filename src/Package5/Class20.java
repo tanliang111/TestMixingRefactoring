@@ -1,4 +1,4 @@
-package Package2;
+package Package5;
 
 import Package5.ArrayList;
 import Package5.FileInputStream;
@@ -12,7 +12,7 @@ import Package5.PEMKeyPair;
 import Package5.PublicKey;
 import Package5.SubjectPublicKeyInfo;
 
-public class Class20 {
+public class Class20 extends Class27 {
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
 	  /** . */
 	  private String[] files;
@@ -52,9 +52,5 @@ public class Class20 {
 	      }
 	    }
 	    return keys;
-	  } 
-	    private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
-		    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-		    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
-		  }
+	  }
 }
