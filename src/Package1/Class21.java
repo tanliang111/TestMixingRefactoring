@@ -1,4 +1,9 @@
-package Package5;
+package Package1;
+
+import Package6.JcaPEMKeyConverter;
+import Package6.KeyPair;
+import Package6.PEMException;
+import Package6.PEMKeyPair;
 
 public class Class21 {
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
@@ -41,7 +46,10 @@ public class Class21 {
 	    }
 	    return keys;
 	  }
-
+	  private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+		    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+		    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+		  }
 	 
 
 
