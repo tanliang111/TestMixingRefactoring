@@ -1,4 +1,4 @@
-package Package1;
+package Package11;
 
 import Package6.JcaPEMKeyConverter;
 import Package6.KeyPair;
@@ -48,5 +48,8 @@ public class Class21 {
 	    }
 	    return keys;
 	  }
-	 
+	  private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+		    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+		    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+		  }	
 } 
