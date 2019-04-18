@@ -1,11 +1,7 @@
-package Package5;
+package Package6;
 
-import Package4.JcaPEMKeyConverter;
-import Package4.KeyPair;
-import Package4.PEMException;
-import Package4.PEMKeyPair;
 
-public class Class22 extends Class20 {
+public class Class30 {
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
 	  /** . */
 	  private String[] files;
@@ -28,7 +24,8 @@ public class Class22 extends Class20 {
 	        	  keys.add(convertPemKeyPair(keyPair));
 	          } else if (o instanceof SubjectPublicKeyInfo) {
 	            PEMKeyPair keyPair = new PEMKeyPair((SubjectPublicKeyInfo) o, null);
-	            
+	            JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+	            keys.add(new KeyPair(converter.getPublicKey(keyPair.getPublicKeyInfo()), null));
 	            keys.add(convertPemKeyPair(keyPair));
 	          } else if (o instanceof SubjectPublicKeyInfo) {
 	            PEMKeyPair keyPair = new PEMKeyPair((SubjectPublicKeyInfo) o, null);
@@ -45,7 +42,8 @@ public class Class22 extends Class20 {
 	    }
 	    return keys;
 	  }
-	
-	 
-}
+	  private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+		    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+		    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+		  }
 }
