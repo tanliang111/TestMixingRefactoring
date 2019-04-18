@@ -1,5 +1,7 @@
 package Package5;
 
+import Package1.PaymentApiException;
+import Package1.PaymentTransactionInfoPlugin;
 import Package4.JcaPEMKeyConverter;
 import Package4.KeyPair;
 import Package4.PEMException;
@@ -47,4 +49,14 @@ public class Class22 extends Class20 {
 	  }
 		 
 }
-
+class Class35 {
+	public void sanityOnPaymentInfoPlugin(final PaymentTransactionInfoPlugin paymentInfoPlugin) throws PaymentApiException {
+        if (paymentInfoPlugin == null) {
+            throw new PaymentApiException(ErrorCode.PAYMENT_PLUGIN_EXCEPTION, "Payment plugin returned a null result");
+        }
+}
+	private KeyPair convertPemKeyPair(PEMKeyPair pemKeyPair) throws PEMException {
+	    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
+	    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
+	  }	
+}
