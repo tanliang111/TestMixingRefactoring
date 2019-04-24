@@ -21,3 +21,11 @@ public class Class38 {
 	}
 
 }
+
+class Class41 extends Class42 {
+	 public void sanityOnPaymentInfoPlugin(final PaymentTransactionInfoPlugin paymentInfoPlugin) throws PaymentApiException {
+	        if (paymentInfoPlugin == null) {
+	            throw new PaymentApiException(ErrorCode.PAYMENT_PLUGIN_EXCEPTION, "Payment plugin returned a null result");
+	        }
+	}
+}
