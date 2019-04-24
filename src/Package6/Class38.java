@@ -1,10 +1,11 @@
 package Package6;
 
-public class Class38 {
+import Package5.PaymentApiException;
+import Package5.PaymentTransactionInfoPlugin;
+
+public class Class38 extends Class39 {
 	public void cde() {
 
 	}
-
-
 
 }
