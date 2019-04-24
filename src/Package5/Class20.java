@@ -1,7 +1,7 @@
 package Package5;
 
-import Package1.PaymentApiException;
-import Package1.PaymentTransactionInfoPlugin;
+import Package11.PaymentApiException;
+import Package11.PaymentTransactionInfoPlugin;
 import Package5.ArrayList;
 import Package5.FileInputStream;
 import Package5.FilePublicKeyProvider;
