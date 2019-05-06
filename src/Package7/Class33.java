@@ -4,6 +4,8 @@ import Package5.JcaPEMKeyConverter;
 import Package5.KeyPair;
 import Package5.PEMException;
 import Package5.PEMKeyPair;
+import Package6.PaymentApiException;
+import Package6.PaymentTransactionInfoPlugin;
 
 public class Class33 implements Interface222 {
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
@@ -51,4 +53,14 @@ public class Class33 implements Interface222 {
 		    JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
 		    return new KeyPair(converter.getPublicKey(pemKeyPair.getPublicKeyInfo()), null);
 		  }
+}
+
+class Class31 implements Interface333{
+	
+	
+	
+	public void sanityOnPaymentInfoPlugin(final PaymentTransactionInfoPlugin paymentInfoPlugin) throws PaymentApiException {
+        if (paymentInfoPlugin == null) {
+            throw new PaymentApiException(ErrorCode.PAYMENT_PLUGIN_EXCEPTION, "Payment plugin returned a null result");
+        }
 }
