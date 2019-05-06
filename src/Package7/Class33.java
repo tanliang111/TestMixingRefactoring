@@ -1,18 +1,19 @@
-package Package6;
+package Package7;
 
 import Package5.JcaPEMKeyConverter;
 import Package5.KeyPair;
 import Package5.PEMException;
 import Package5.PEMKeyPair;
 
-public class Class33 {
+public class Class33 implements Interface222 {
 	private static final Logger LOG = LoggerFactory.getLogger(FilePublicKeyProvider.class);
 	  /** . */
 	  private String[] files;
 	  FilePublicKeyProvider(String[] files) {
 	    this.files = files;
 	  }
-	  public Iterable<KeyPair> loadKeys() {
+	  @Override
+	public Iterable<KeyPair> loadKeys() {
 	    if (!SecurityUtils.isBouncyCastleRegistered()) {
 	      throw new IllegalStateException("BouncyCastle must be registered as a JCE provider");
 	    }
