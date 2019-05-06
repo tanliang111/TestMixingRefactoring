@@ -32,8 +32,7 @@ public class Class66 {
 	            PEMKeyPair keyPair = new PEMKeyPair((SubjectPublicKeyInfo) o, null);
 	            keys.add(convertPemKeyPair(keyPair));
 	            
-	            JcaPEMKeyConverter converter = new JcaPEMKeyConverter();
-	            keys.add(new KeyPair(converter.getPublicKey(keyPair.getPublicKeyInfo()), null));
+	            
 	          
 	          } else {
 	            throw new UnsupportedOperationException(String.format("Key type %s not supported.", o.getClass().getName()));
@@ -45,6 +44,7 @@ public class Class66 {
 	    }
 	    return keys;
 	  }
+	}
 	   
 }     
-}
+
