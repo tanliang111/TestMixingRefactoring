@@ -1,5 +1,6 @@
 package Package6;
 
+import Package2.Class42;
 
 public class Class38 {
 	
