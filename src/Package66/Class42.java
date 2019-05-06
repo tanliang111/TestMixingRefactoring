@@ -1,7 +1,9 @@
-package Package6;
+package Package66;
 
 public class Class42 {
 
+	private static final String NEW_PASSWORD_PARAMETER = "new-password";
+	
 	public Class42() {
 		super();
 	}
