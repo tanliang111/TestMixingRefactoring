@@ -1,6 +1,6 @@
 # TestMixingRefactoring
-| Mixing Refactoring Types  | Commit |Features|Result|Precision|
-| ------------- | ------------- |-------------|-------------|-------------|
+| Mixing Refactoring Types  | Commit |Features|Result|
+| ------------- | ------------- |-------------|-------------|
 |ExtractMethod + Inline Method	|There is no mixing			
 |ExtractMethod + MoveClass (Class is main Class)|	a1365c65fcfbc3e4f3ecab4a979eacb290ccfe26	|Path changed, Package name changed, Same Class, New method |	Extract Method: 32.2% Move Class: 15.5% Rename Package: 44.2% 	
 |ExtractMethod + MoveClass (Class is child Class)|	6f66f7369f005a5ae3d64dcb8208cb456a358f7a|	Different package,  same class, remove Class, add class , new method 	|Extract Method: 25.7% Move Class: 47.0% 	
