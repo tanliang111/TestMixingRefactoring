@@ -13,7 +13,7 @@ Different Class|	0.0%|	0.0%	|21.1%|	22.2%	|21.1%	|21.1%|	14.4%	|0.0%	|0.0%	|0.0%
 
 
 
-## Refactoring ingredient
+## Refactoring Ingredient
 |Package-level |Extract Method|	Inline Method	|Pull Up Method|	Push Down Method	|Move Method|	Move Attribute|	Move Class|	Extract SuperClass	|Extract Interface|	Rename Package|
 | ------------- | ------------- |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
 Name change	|0.0%	|0.0%|0.0%	|0.0%	|0.0%	|0.0%	|25.9%	|0.0%	|0.0%|	74.1%|
